@@ -1,16 +1,19 @@
 <div class="container">
-  <div class="card d-flex">
+  <div class="card d-flex border-0">
     <h1><%= @article.title %></h1>
-    <%= link_to "Edit", edit_article_path%>
-    <%= link_to "Delete",
-    article_path(@article),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
+    <div>
+      <%= link_to ('<i class="fa-solid fa-pencil"></i>').html_safe, edit_article_path  %>
+    </div>
+    <div>
+      <%= link_to (' <i class="fa-solid fa-trash-can"></i>').html_safe, article_path(@article),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
   </div>
 
   <hr>
 
-  <div class="card">
+  <div class="card border-0">
     <p>
       <%= @article.content %>
     </p>
