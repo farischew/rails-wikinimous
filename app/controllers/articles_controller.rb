@@ -20,11 +20,21 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-
+    @article = set_article
   end
 
   def update
+    @article = set_article
+    @article.update(article_params)
 
+    redirect_to articles_path
+  end
+
+  def destroy
+    @article = set_article
+    @article.destroy
+
+    redirect_to articles_path
   end
 
   private

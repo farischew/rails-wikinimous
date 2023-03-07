@@ -1,8 +1,11 @@
 <div class="container">
   <div class="card d-flex">
     <h1><%= @article.title %></h1>
-    <span>EDIT</span>
-    <span>DELETE</span>
+    <%= link_to "Edit", edit_article_path%>
+    <%= link_to "Delete",
+    article_path(@article),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
   </div>
 
   <hr>

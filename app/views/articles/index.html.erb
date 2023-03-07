@@ -1,3 +1,8 @@
+<div class="navbar-brand d-flex justify-content-between">
+  <p class="text-decoration-none fs-4"><%= link_to 'Wikinimous', articles_path %></p>
+  <p class="text-decoration-none fs-6 fw-light"><%= link_to 'New Article', new_article_path %></p>
+</div>
+
 <div class="container">
   <% @articles.each do |article| %>
     <div class="card">
